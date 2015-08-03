@@ -17,3 +17,16 @@ allprojects {
         jcenter()
     }
 }
+
+
+project(':backend'){
+    task startup{
+        dependsOn "appengineRun"
+        dependsOn "test"
+        dependsOn "appengineStop"
+        doLast {
+            println "executing..."
+        }
+    }
+
+}
