@@ -12,7 +12,7 @@ import com.udacity.gradle.builditbigger.IDownloadListener;
 import com.udacity.gradle.builditbigger.R;
 
 public class MainActivity extends AppCompatActivity {
-
+    ProgressBar spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view){
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
         new AsyncJokeDownloader(new IDownloadListener() {
             @Override
             public void downloadCompleted(String j) {
