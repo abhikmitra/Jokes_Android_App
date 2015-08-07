@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.free;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.widget.ProgressBar;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.microsoft.jokescreenlibrary.Main2Activity;
+import com.udacity.gradle.builditbigger.AsyncJokeDownloader;
+import com.udacity.gradle.builditbigger.IDownloadListener;
+import com.udacity.gradle.builditbigger.R;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -75,7 +79,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void downloadCompleted(String j) {
                 spinner.setVisibility(View.GONE);
-                in = new Intent("android.intent.joke.Display");
+                in = new Intent(getApplicationContext(), Main2Activity.class);
                 in.putExtra("Joke", j);
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();

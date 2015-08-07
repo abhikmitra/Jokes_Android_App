@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
+import com.microsoft.jokescreenlibrary.Main2Activity;
 import com.udacity.gradle.builditbigger.AsyncJokeDownloader;
 import com.udacity.gradle.builditbigger.IDownloadListener;
 import com.udacity.gradle.builditbigger.R;
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         new AsyncJokeDownloader(new IDownloadListener() {
             @Override
             public void downloadCompleted(String j) {
-                Intent in = new Intent("android.intent.joke.Display");
+                Intent in = new Intent(getApplicationContext(), Main2Activity.class);
                 in.putExtra("Joke", j);
                 startActivity(in);
             }

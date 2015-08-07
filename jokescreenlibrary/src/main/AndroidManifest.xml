@@ -9,7 +9,6 @@
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2" >
             <intent-filter>
-                <action android:name="android.intent.joke.Display" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
